@@ -1,0 +1,51 @@
+.movie-item {
+  width: 540px;
+  height: 220px;
+  margin: 8px 0;
+
+  display: flex;
+  flex-direction: row;
+
+  background: #f0f;
+}
+
+.movie-image {
+  width: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid black;
+}
+
+.movie-info {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  background: dodgerblue;
+}
+
+.title {
+  margin: 16px;
+
+  font-weight: 500;
+  border: 1px solid dodgerblue;
+}
+
+.genre {
+  margin: 16px;
+
+  font-weight: 500;
+  border: 1px solid dodgerblue;
+}
+
+.release-year {
+  margin: 16px;
+
+  font-weight: 500;
+  border: 1px solid dodgerblue;
+}
