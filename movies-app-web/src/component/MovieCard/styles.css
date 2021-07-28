@@ -9,16 +9,6 @@
   background: #f0f;
 }
 
-.movie-image {
-  width: 50%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border: 1px solid black;
-}
-
 .movie-info {
   width: 100%;
 

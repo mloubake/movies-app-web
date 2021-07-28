@@ -1,31 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import api from "../services/api";
 
 import MovieCard from "../component/MovieCard/index";
 
 export default function Main() {
-  // const [movies, setMovies] = useState([
-  //   { title: "movie 1", genre: "genre a", releaseYear: "XXXX" },
-  //   { title: "movie 2", genre: "genre b", releaseYear: "XXXX" },
-  //   { title: "movie 3", genre: "genre c", releaseYear: "XXXX" },
-  // ]);
+  const [movies, setMovies] = useState([]);
 
-  api
-    .get(`/movie/popular?api_key=${process.env.REACT_APP_TMDB_API_KEY}`)
-    .then((result) => {
-      console.log(result.data.results);
-    });
+  useEffect(() => {
+    api
+      .get(`/movie/popular?api_key=${process.env.REACT_APP_TMDB_API_KEY}`)
+      .then((result) => {
+        setMovies(result.data.results);
+      });
+  }, []);
 
   return (
     <div>
-      {/* {movies.map((movie) => (
+      {movies.map((movie) => (
         <MovieCard
+          posterPath={movie.poster_path}
           title={movie.title}
-          genre={movie.genre}
-          releaseYear={movie.releaseYear}
+          releaseYear={movie.release_date}
+          // genre={movie.genre}
+          // releaseYear={movie.releaseYear}
         />
-      ))} */}
+      ))}
     </div>
   );
 }
