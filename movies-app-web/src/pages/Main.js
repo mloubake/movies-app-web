@@ -23,7 +23,6 @@ export default function Main() {
           title={movie.title}
           releaseYear={movie.release_date}
           // genre={movie.genre}
-          // releaseYear={movie.releaseYear}
         />
       ))}
     </div>
