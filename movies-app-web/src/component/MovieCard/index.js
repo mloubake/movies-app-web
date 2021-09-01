@@ -13,7 +13,7 @@ export default function MovieCard({ posterPath, title, genre, releaseYear }) {
         </div>
         <div className="movie-info">
           <span className="title">{title}</span>
-          <span className="genre">lorem ipsum dolor sit amet</span>
+          <span className="genre">{genre}</span>
           <span className="release-year">{releaseYear}</span>
           <button>+ detalhes</button>
         </div>
