@@ -7,6 +7,11 @@ export default function MovieCard({ posterPath, title, genre, releaseYear }) {
     return genreList.join(bulletPoint);
   }
 
+  function convertReleaseDateToReleaseYear(movieReleaseDate) {
+    const releaseDate = new Date(movieReleaseDate);
+    return releaseDate.getFullYear();
+  }
+
   return (
     <>
       <div className="movie-item">
@@ -20,7 +25,9 @@ export default function MovieCard({ posterPath, title, genre, releaseYear }) {
         <div className="movie-info">
           <span className="title">{title}</span>
           <span className="genre">{convertGenreListToText(genre)}</span>
-          <span className="release-year">{releaseYear}</span>
+          <span className="release-year">
+            {convertReleaseDateToReleaseYear(releaseYear)}
+          </span>
           <button>+ detalhes</button>
         </div>
       </div>
