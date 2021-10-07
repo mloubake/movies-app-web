@@ -1,9 +1,9 @@
 import "./globalStyles.css";
-import Main from "./pages/Main";
+import MoviesList from "./features/movies-list/presentation/index";
 function App() {
   return (
     <>
-      <Main />
+      <MoviesList />
     </>
   );
 }

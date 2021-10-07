@@ -1,25 +1,21 @@
 import { useState, useEffect } from "react";
 
-import api from "../services/api";
+import MovieCard from "../../../component/MovieCard/index";
 
-import MovieCard from "../component/MovieCard/index";
+import { getMovieGenres, getPopularMovies } from "../data/moviesRepository";
 
-export default function Main() {
+export default function MoviesList() {
   const [movies, setMovies] = useState([]);
   const [allGenreIds, setAllGenreIds] = useState([]);
 
   useEffect(() => {
-    api
-      .get(`/movie/popular?api_key=${process.env.REACT_APP_TMDB_API_KEY}`)
-      .then((result) => {
-        setMovies(result.data.results);
-      });
+    getMovieGenres().then((res) => {
+      setAllGenreIds(res);
+    });
 
-    api
-      .get(`/genre/movie/list?api_key=${process.env.REACT_APP_TMDB_API_KEY}`)
-      .then((result) => {
-        setAllGenreIds(result.data.genres);
-      });
+    getPopularMovies().then((res) => {
+      setMovies(res);
+    });
   }, []);
 
   function populateGenreIdsByName(genreIds) {
