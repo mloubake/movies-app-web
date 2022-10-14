@@ -34,10 +34,10 @@ export default function MoviesList() {
     <div>
       {movies.map((movie) => (
         <MovieCard
-          posterPath={movie.poster_path}
+          posterPath={movie.posterImageURL}
           title={movie.title}
-          releaseYear={movie.release_date}
-          genre={populateGenreIdsByName(movie.genre_ids)}
+          releaseYear={movie.releaseDate}
+          genre={populateGenreIdsByName(movie.genreIds)}
         />
       ))}
     </div>
